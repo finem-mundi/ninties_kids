@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Californication</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <style>
+
+        @font-face {
+            font-family: VDSNeue;
+            src: url(VDS_New.ttf);
+        }
+
+        .spin {
+            border-radius: 50%;
+            animation: spin 10s linear infinite;
+            display: inline-block;
+            margin-bottom: 4rem;
+            object-fit: cover;
+            mask-image: radial-gradient(circle at center, transparent 3rem, black 3rem);
+        }
+
+        @keyframes spin {
+            from {
+            transform: rotate(0deg);
+            }
+            to {
+            transform: rotate(360deg);
+            }
+        }
+
+    </style>
+
+</head>
+<body class="flex flex-col bg-black justify-center items-center">
+    <marquee style="font-family: VDSNeue; color: white; margin-bottom: 4rem; margin-top: 4rem; font-size: 2rem;">Californication by Red Hot Chili Peppers. Website made by Finem Mundi.</marquee>
+    <img src="https://upload.wikimedia.org/wikipedia/en/d/db/Californicationsingle.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" class="spin" width="500" height="500">
+    <audio controls autoplay src="californication.mp3"></audio>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    /* A background pattern to prove the hole is truly transparent */
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+  }
+
+  .image-with-hole {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    
+    /* Cuts a 60px radius circle out of the center */
+    -webkit-mask-image: radial-gradient(circle at center, transparent 60px, black 61px);
+    mask-image: radial-gradient(circle at center, transparent 60px, black 61px);
+  }
+</style>
+</head>
+<body>
+
+  <img src="https://upload.wikimedia.org/wikipedia/en/3/3c/Smells_Like_Teen_Spirit.jpg?utm_source=en.wikipedia.org&utm_campaign=index&utm_content=original" class="image-with-hole" alt="Image with center hole">
+
+</body>
+</html>

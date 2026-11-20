@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+
+        /* Typefaces */
+
+        @font-face {
+            font-family: VDSFat;
+            src: url(vds/VDS_Bold_New.ttf);
+        }
+
+        @font-face {
+            font-family: VDSLight;
+            src: url(vds/VDS_Compensated_Light.ttf);
+        }
+
+        @font-face {
+            font-family: VDSNeue;
+            src: url(vds/VDS_New.ttf);
+        }
+
+        @font-face {
+            font-family: VDSThin;
+            src: url(vds/VDS_Thin.ttf);
+        }
+
+        @font-face {
+            font-family: Milky;
+            src: url(MilkyWell.ttf);
+        }
+
+        /* Main design */
+
+        * {
+            background-image: linear-gradient();
+            font-weight: bold;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(black, navy);
+            background-attachment: fixed;
+        }
+
+        #loader {
+            width: 100%;
+            height: 100vh;
+            background-image: linear-gradient(black);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        #loader h1 {
+            margin: 5rem;
+        }
+
+        .header {
+            width: 100%;
+            height: 15vh;
+            display: flex;
+            justify-content: center;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+    </style>
+
+</head>
+
+<body id="body" style="overflow: hidden;">
+
+    <div class="header">
+        <div class="flex flex-col items-center">
+            <h1 class="text-5xl text-[rgb(255,255,255)]" style="font-family: Milky;">Back from the '90s</h1>
+            <h1 class="text-3xl text-[rgb(255,255,255)]" style="font-family: Milky;">Where a Millenial can reminisce!</h1>
+        </div>
+        <div class="w-[60rem] h-[4rem] rounded-full border-2 border-[rgb(255,255,255)] bg-[rgb(0,0,0)]/0 flex items-center">
+            <i class="fa fa-search text-white text-[2rem] transition-transform duration-1500 ease hover:rotate-[360deg]" style="margin: 1rem;" aria-hidden="true"></i>
+            <h1 class="text-2xl text-[rgb(255,255,255)] hover:text-[rgb(200,200,200)] cursor-pointer" style="font-family: VDSFat;">Search...</h1>
+        </div>
+    </div>
+    <div class="flex w-[100%] h-[5vh] justify-center">
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Nirvana</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Pearl Jam</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Red Hot Chili Peppers</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Blur</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Blink-182</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="margin-right: 1.5rem; font-family: Milky;">Oasis</p>
+        <p class="text-2xl text-white transition-all duration-1000 ease hover:text-[rgb(0,0,255)] hover:scale-110 cursor-pointer" style="font-family: Milky;">Green Day</p>
+    </div>
+
+    <div class="flex w-[100%] h-[80vh] justify-center items-center flex-col">
+        <h1 class="text-8xl text-white" style="margin-right: 1.5rem; font-family: Milky;">Your Total</h1>
+        <h2 id="total" class="text-9xl text-white" style="margin-right: 1.5rem; font-family: Milky;">$0.00</h2>
+        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <button class="mt-3 h-[4rem] w-[20rem] bg-sky-700 text-4xl transition-all duration-1000 ease text-white rounded-lg hover:bg-sky-800" style="font-family: Milky;">Checkout</button>
+        </a> 
+    </div>
+
+    <script>
+        let total = Number(localStorage.getItem("totalPrice")) || 0;
+
+        document.getElementById("total").innerHTML = total.toFixed(2) + "$";
+        
+    </script>
+
+</body>
+
+</html>
